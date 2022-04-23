@@ -29,7 +29,7 @@ void solved(){
        count++;
        }
    }
-   if(count>1)
+   if(count>1)   
    cout<<"No"<<endl;
    else
    cout<<"Yes"<<endl;
