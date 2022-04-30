@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(){
-     ios_base::sync_with_stdio(false);     // Here we add these so that we use cin and cout for faster input/output so instead of scanf and printf if we use cin and cout we have to include this
+     ios_base::sync_with_stdio(false);     // Here we add these so that we use cin and cout for faster input/output so instead of scanf and printf if we use cin and cout we have to include this it is speeding up the input output in c++;
     cin.tie(NULL); 
     long long t;
     cin>>t;
