@@ -16,36 +16,14 @@ ll lcm(int a,int b){
     return a1*b1/__gcd(a1,b1);
 }
 void solved(){
-//    ll n,b;
-//    cin>>n>>b;
-//    ll ans =0;
-//    ll val;
-//    ll nmoves=n/b;
-//    ll first;
-//    while(nmoves){
-//     first=(n-nmoves*b);
-//     val = nmoves*first;
-//     ans = max(val,ans);
-//     nmoves--;
-// another approach
-ll n,b;
-   cin>>n>>b;
-    ll nmoves=((n/(2*b)));
-    ll nmoves1= nmoves+1;
-   if(nmoves>n){
-       nmoves=0;
-   }
-   if(nmoves1>n)
-   nmoves1=0;
-   ll ans;
-  
-   ans = max(nmoves1*(n-nmoves1*b), nmoves*(n-nmoves*b));
-   
-   
-   
-   cout<<ans<<"\n";
-   } 
-
+    ll n,m,x;
+    cin>>n>>m>>x;
+    ll totalscore=n*x;
+    if(x+1>m)
+    cout<<"0\n";
+    else
+    cout<<(totalscore/(x+1))<<endl;
+}
 int main(){
 ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
