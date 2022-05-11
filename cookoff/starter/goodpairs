@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+#define pb push_back
+typedef vector<int> vi;
+typedef vector<ll> vl;
+typedef vector<vi> vvi;
+typedef vector<vl> vvl;
+mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
+const int Mod = 1'000'000'007;
+const int N = 3e5, M = N;
+ll lcm(int a,int b){
+    ll a1=a;
+    ll b1=b;
+    return a1*b1/__gcd(a1,b1);
+}
+void solved(){
+    ll n;
+    cin>>n;
+    ll ar[n+1];
+    ll br[n+1];
+    for(ll i=1;i<=n;i++){
+        cin>>ar[i];
+        
+    }
+    for(ll i=1;i<=n;i++){
+        cin>>br[i];
+        
+    }
+    map<pair<ll,ll>,ll>mp;
+    ll sol=0;
+    for(ll i=1;i<=n;i++){
+        sol = sol+mp[{a[i],b[i]}];
+        mp[{b[i],a[i]}]++;
+    }
+    cout<<sol<<"\n";
+   
+}
+int main(){
+ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    srand(chrono::high_resolution_clock::now().time_since_epoch().count());
+    int t;
+    cin>>t;
+    while(t--){
+        solved();
+    }
+return 0;
+}
