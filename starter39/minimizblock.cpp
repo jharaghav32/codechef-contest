@@ -17,13 +17,13 @@ ll lcm(int a,int b){
     ll b1=b;
     return a1*b1/__gcd(a1,b1);
 }
-int dfs(vector<vector<pair<int,int>>>&adj,int element,vector<int>&ans,int parent,bool block){
+int dfs(vector<vector<pair<int,int>>>&adj,int element,vector<int>&ans,int parent,int block){
     int nodes=1;
     for(auto i:adj[element]){
         if(i.first!=parent){
             int x = dfs(adj,i.first,ans,element,(block || i.second));
             nodes += x;
-            if(i.second==1 && !block){
+            if(i.second==1 && block==0){
                 ans.push_back(x);
             }
         }
@@ -40,8 +40,9 @@ void solved(){
      adj[u].push_back({v,x});
      adj[v].push_back({u,x});
     }
+    // here in block case we consider 0 if node is or may be infected and 1 for not infected
     vector<int>ans;
-    dfs(adj,1,ans,-1,false);
+    dfs(adj,1,ans,-1,0);
     sort(ans.begin(),ans.end(),greater<int>());
     int infected =n;
     int count=0;
