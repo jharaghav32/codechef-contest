@@ -19,22 +19,29 @@ void solved(){
     int n;
     cin>>n;
     int arr[n];
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n;i++) {
         cin>>arr[i];
     }
-    int count=0;
+    int count2=0;
+    int count3=0;
+    bool count4=false;
     for(int i=0;i<n-1;i++){
-        if(arr[i]>arr[i+1])
-        {
-            count++;
-            i++;
-        }
-        else{
-            if(arr[i]>arr[i+1]){
-                count++;
-            }
-        }
+        if(arr[i+1]-arr[i]==1)continue;
+     else if(arr[i+1]-arr[i]==2)
+     count2++;
+     else if(arr[i+1]-arr[i]==3)count3++;
+     else{
+         count4=true;
+         break;
+     }
     }
+    if(count4)cout<<"NO\n";
+    else if(count2<=2 && count3==0)
+    cout<<"YES\n";
+    else if(count3<=1&&count2==0)
+    cout<<"YES\n";
+    else
+    cout<<"NO\n";
 }
 int main(){
 ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
