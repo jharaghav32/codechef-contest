@@ -16,14 +16,37 @@ ll lcm(int a,int b){
     return a1*b1/__gcd(a1,b1);
 }
 void solved(){
-    int x,y;
-    cin>>x>>y;
-    int sum = 3*x;
-    int b = y;
-    int c = 501;
-    int a =  (3*x-y-501);
-    cout<< a<<" "<<b<<" "<<c;
-    cout<<"\n";
+    int r,g,b;
+    cin>>r>>g>>b;
+    int color=0;
+    if(r>=1){
+    color++;
+    r--;
+    }
+    if(g>=1){
+        color++;
+        g--;
+    }
+    if(b>=1){
+        color++;
+        b--;
+    }
+    if(r>=1 && g>=1){
+        color++;
+        r--;
+        g--;
+    }
+    if(r>=1 && b>=1){
+        color++;
+        r--;
+        b--;
+    }
+    if(g>=1 && b>=1){
+        color++;
+        g--;
+        b--;
+    }
+    cout<<color<<"\n";
 }
 int main(){
 ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
