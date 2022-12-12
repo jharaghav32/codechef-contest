@@ -16,21 +16,17 @@ ll lcm(int a,int b){
     return a1*b1/__gcd(a1,b1);
 }
 void solved(){
-ll n,m;
-cin>>n>>m;
-ll ans=0;
-for(ll i=1;i<=n;i++){
-    for(ll j=1;j<=m;j++){
-        char c;
-        cin>>c;
-       if(j==m && c=='R'){
-         ans++;
-       }
-       if(i==n && c=='D'){
-        ans++;
-       }
-    }
+ll n;
+cin>>n;
+ll stud=2*n;
+vector<int>v(stud);
+for(int i=0;i<stud;i++){
+    cin>>v[i];
 }
+sort(v.begin(),v.end());
+int first = n;
+int second=n-1;
+ll ans = abs(v[first]-v[second]);
 cout<<ans<<"\n";
 }
 int main(){

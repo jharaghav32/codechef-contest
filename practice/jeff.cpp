@@ -16,22 +16,7 @@ ll lcm(int a,int b){
     return a1*b1/__gcd(a1,b1);
 }
 void solved(){
-ll n,m;
-cin>>n>>m;
-ll ans=0;
-for(ll i=1;i<=n;i++){
-    for(ll j=1;j<=m;j++){
-        char c;
-        cin>>c;
-       if(j==m && c=='R'){
-         ans++;
-       }
-       if(i==n && c=='D'){
-        ans++;
-       }
-    }
-}
-cout<<ans<<"\n";
+   
 }
 int main(){
 ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);

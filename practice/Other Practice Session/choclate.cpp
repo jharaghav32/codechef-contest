@@ -16,28 +16,37 @@ ll lcm(int a,int b){
     return a1*b1/__gcd(a1,b1);
 }
 void solved(){
-ll n,m;
-cin>>n>>m;
-ll ans=0;
-for(ll i=1;i<=n;i++){
-    for(ll j=1;j<=m;j++){
-        char c;
-        cin>>c;
-       if(j==m && c=='R'){
-         ans++;
-       }
-       if(i==n && c=='D'){
-        ans++;
-       }
+    ll n;
+    cin>>n;
+    ll arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
-}
-cout<<ans<<"\n";
+    ll ans=0;
+    ll prev=INT_MAX;
+    for(int i=n-1;i>=0;i--){
+     if(prev>arr[i]){
+        ans+=arr[i];
+        prev=arr[i];
+     }
+    else if(prev==arr[i]){
+        ans+=arr[i]-1;
+        prev=arr[i]-1;
+    }
+    else{
+        if(prev>1){
+      ans+=prev-1;
+      prev=prev-1;
+        }
+    }
+    }
+    cout<<ans<<"\n";
 }
 int main(){
 ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
-    int t;
-    cin>>t;
+    int t=1;
+    //cin>>t;
     while(t--){
         solved();
     }
